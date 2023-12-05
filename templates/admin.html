@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+
+<h1>Admin</h1>
+
+{% for users in user %}
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone #</th>
+        <th scope="col">Date Joined</th>
+        <th scope="col">Balance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">{{users.id}}</th>
+        <td>{{ users.name | capitalize}}</td>
+        <td>{{ users.email }}</td>
+        <td>{{ users.phone_number }}</td>
+        <td>{{ users.date_added }}</td>
+        <td>${{ users.balance }}</td>
+
+        <br>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a href="{{ url_for('update_user', id=users.id) }}", class="btn btn-secondary">Update</a>
+  <a href="{{ url_for('delete_user_admin', id=users.id) }}" class="btn btn-danger">Delete</a>
+
+  <br>
+
+{% endfor %}
+
+{% for contact in contact %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone #</th>
+      <th scope="col">Date Posted</th>
+      <th scope="col">Subject</th>
+      <th scope="col">Infro</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">{{contact.id}}</th>
+      <td>{{ contact.email }}</td>
+      <td>{{ contact.phone_number }}</td>
+      <td>{{ contact.date_posted }}</td>
+      <td>{{ contact.subject }}</td>
+      <td>{{ contact.content }}</td>
+
+
+      <br>
+    </tr>
+  </tbody>
+</table>
+
+
+<br>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+    <h1> Dashboard</h1>
+
+    {% if user.balance == None %}
+
+        <h2 id="balance">0</h2>
+
+    {% else %}
+
+    <h2 id="balance">${{ user.balance }}</h2>
+
+    {% endif %}
+
+        <div class="row">
+            <div class="col-sm-6">
+              <div class="card" id="deposit-box">
+                <div class="card-body">
+                  <h5 class="card-title"><strong>Deposit</strong></h5>
+
+                  <form method="POST" action="/deposit/{{ user.id }}">
+       
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">$</span>
+                      </div>
+                      {{ form.deposit(class="form-control") }}<br>
+                      <div class="input-group-append">
+                        <span class="input-group-text">.00</span>
+                      </div>
+                    </div>
+                    <strong>{{form.deposit_content.label()}}</strong>
+                    {{ form.deposit_content(class="form-control", rows='3') }}<br>
+            
+                    {{form.submit(class='btn btn-light')}}
+
+                </form>
+            
+                </div>
+              </div>
+            </div>
+            <br>
+ 
+            <div class="row" >
+                <div class="col-sm-6">
+                  <div class="card" id="withdrawl-box">
+                    <div class="card-body" >
+                      <h5 class="card-title"><strong>Withdrawl</strong></h5>
+    
+                      <form method="POST" action="/withdrawl/{{ user.id }}">
+
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">-$</span>
+                          </div>
+                          {{ form.withdrawl(class="form-control") }}<br>
+                          <div class="input-group-append">
+                            <span class="input-group-text">.00</span>
+                          </div>
+                        </div>
+
+                        <strong>{{form.withdrawl_content.label()}}</strong>
+                        {{form.withdrawl_content(class="form-control", rows='3')}}<br>
+                
+                        {{form.submit( class='btn btn-light')}}
+ 
+                        </div>
+                    </form>
+                
+                    </div>
+                  </div>
+                </div>
+
+  
+{% endblock %}

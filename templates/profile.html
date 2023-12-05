@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<h1>Profile</h1>
+
+<div class="shadow-lg p-3 mb-5 bg-white rounded">
+   <strong> USER ID</strong>: {{users.id}}  <br>
+    <strong>USERNAME</strong>: {{ users.name }} <br>
+    <strong>EMAIL</strong>: {{ users.email }} <br>
+    <strong>PHONE</strong>: {{ users.phone_number }} <br>
+    <strong>DATE JOINED</strong>: {{ users.date_added }}<br>
+    <strong>BALANCE</strong>: ${{ users.balance }}<br>
+
+
+    <br>     
+    <a href="{{ url_for('update_user', id=users.id) }}" class="btn btn-secondary">Update</a>
+    <a href="{{ url_for('delete_user', id=users.id) }}" class="btn btn-danger">Delete</a>
+
+</div>
+
+{% endblock %}

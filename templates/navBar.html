@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{{url_for('index')}}">
+        <img src="/static/images/logo.png" width="30" height="30" alt="">
+      </a>
+    <a class="navbar-brand" href="{{url_for('index')}}">Dollar Tracker</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="{{url_for('index')}}">Home</a>
+        </li>
+        {% if current_user.is_authenticated %}
+
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ url_for('dashboard', id=current_user.id) }}">Dashboard</a>
+        </li>
+        
+          <li class="nav-item active">
+            <a class="nav-link" href="{{ url_for('profile', id=current_user.id) }}">Profile</a>
+          </li>
+         
+          
+        <li class="nav-item active">
+          <a class="nav-link" href="{{url_for('contact')}}">Contact</a>
+        </li>
+
+          <li class="nav-item active">
+            <a class="btn btn-danger" href="{{ url_for('logout') }}" style="position: relative; left: 1300px;"">Logout</a>
+          </li>
+        {% else %}
+
+          
+        <li class="nav-item active">
+          <a class="nav-link" href="{{url_for('contact')}}">Contact</a>
+        </li>
+        
+        <li class="nav-item active">
+          <a class="nav-link" href="{{url_for('about')}}">About</a>
+        </li>
+
+          <li class="nav-item active" style="position: relative; left: 1300px;"'>
+            <a class=" btn btn-primary" href="{{ url_for('login') }}" >Login/Sign Up</a>
+          </li>
+
+        {% endif %}
+          
+
+      </ul>
+    </div>
+  </nav>

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+
+{% for message in get_flashed_messages() %}
+
+    <!-- alert-success makes color green -->
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong> {{message}}</strong> 
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+{% endfor %}
+
+<h1>Login</h1>
+<div class="shadow-lg p-3 mb-5 bg-white rounded">
+    <form method="POST" >
+        {{ form.hidden_tag() }}
+
+        {{ form.email.label() }}
+        {{ form.email(class="form-control") }}<br>
+
+        {{form.password.label()}}
+        {{ form.password(class="form-control") }}<br>
+
+        {{ form.submit(class="btn btn-primary") }}
+        <a href="{{url_for('sign_up')}}" class="btn btn-secondary">Sign up</a>
+
+    </form>
+</div>
+
+
+
+{% endblock %}

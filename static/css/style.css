@@ -1,0 +1,42 @@
+body{
+    background-color: gainsboro;
+}
+#balance{
+    font-size: 100px;
+    position: relative ; left: 450px;
+
+}
+#deposit-box{
+    position: absolute; right: 55%; top: 45%;
+    width: 500px;
+    background-color: rgb(34, 172, 89);
+}
+#withdrawl-box{
+    position: absolute; right: 23%; top: 45%;
+    width: 500px;
+    background-color: rgb(218, 29, 23);
+}
+#jumbo1{
+    position: absolute; left: 2%; top: 7%;
+    
+}
+#peopleimg1{
+    position: relative; left: 10px;
+    width: 1800px;
+}
+
+#card1{
+    position: absolute; bottom: -500px; right: 45%;
+    background-color: snow;
+    border: 20px;
+}
+#card2{
+    position: absolute; bottom: -500px; right: 25%;
+    background-color: snow;
+    border: 20px;
+}
+#card3{
+    position: absolute; bottom: -500px; right: 65%;
+    background-color: snow;
+    border: 20px;
+}

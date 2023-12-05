@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+
+{% if proceed %}
+    <h2>Welcome In</h2>
+
+{% else %}
+
+    <h1>Sign Up</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+        {{ form.name.label() }}
+        {{ form.name(class="form-control") }}<br>
+
+        {{ form.email.label() }}
+        {{ form.email(class="form-control") }}<br>
+
+        {{ form.phone_number.label() }}
+        {{ form.phone_number(class="form-control") }}<br>
+
+        {{ form.password_hash.label() }}
+        {{ form.password_hash(class="form-control") }}<br>
+
+        {{ form.password_hash2.label() }}
+        {{ form.password_hash2(class="form-control") }}<br>
+
+        {{ form.submit(class="btn btn-primary") }}
+        <a href="{{ url_for('login') }}", class="btn btn-secondary">Login</a>
+
+    </form>
+
+{% endif %}
+
+{% endblock %}

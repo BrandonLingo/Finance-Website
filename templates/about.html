@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+
+<div class="card">
+    <div class="card-header">
+      About
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Message From The Creator:</h5>
+      <p class="card-text">
+        This website was created in November of 2023 by Brandon Lingo. I am 18 years old at the time of creating this and im in my freshman year of college. This is my first Website <br>
+        that I have created, the point of this website is to kind of mimic a bank website. I'm using this website to pratice wokring with databases and web-devolpment. I intend on creating other 
+        websites and to make them more advanced with more functionality, but for now I this one is more of stepping stone into web-devolpment. Try not to judge to harshly about this website,
+        if their is any feedback you can give me on what I could've done better please go to the <a href="{{url_for('contact')}}">Contact</a> page. I have also tried to make this 
+        website as secure as possible as well, so don't be affraid to create account, your information should be secure. I don't plan on updating this website in the future,
+        just because I would like to start working on other projects, but I may come back to add more features just to pratice. But i'm quite proud of this website especially
+        for it being my first one, and since I have no prior experience in web-devolpment. All the code for this will be uploaded to a GitHub repository, in their you can find
+        the admin password and see how I setup the admin operations for yourself, but be warned the code is a little messy. I should've from the beggining thought of a better
+        way to structure the code. But overall i'm happy with this website. Thank You.
+
+        <br>
+        <br>
+        - Brandon Lingo
+        
+
+      </p>
+      <h5 class="card-title">Technolgies Used:</h5>
+      <ul>
+        <li>Python</li>
+        <li>Flask</li>
+        <li>SQLAlchemy</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Bootstrap</li>
+        <li>Heroku</li>
+      </ul>
+      <h5 class="card-title">Contact Info:</h5>
+      <ul>
+        <li><strong>Email</strong>: <a href="mailto: brandonlingo0@gmail.com">brandonlingo0@gmail.com</a></li>
+      </ul>
+
+      <a href="{{url_for('index')}}" class="btn btn-primary">Home</a> 
+      <a href="{{url_for('contact')}}" class="btn btn-primary">Contact</a>
+    </div>
+  </div>
+
+{% endblock %}
