@@ -13,7 +13,7 @@ app.config['SECRET_KEY'] = "Password"
 
 
 #Create Home Page
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
     return render_template('index.html')
 #----------------------------------------------------------------------------------
